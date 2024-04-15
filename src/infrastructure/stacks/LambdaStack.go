@@ -22,28 +22,28 @@ func NewLambdaStack(scope constructs.Construct, id string, props *LambdaStackPro
 	weatherLambda := awslambda.NewFunction(stack, jsii.String("WeatherLambda"), &awslambda.FunctionProps{
 		Runtime: awslambda.Runtime_GO_1_X(),
 		Handler: jsii.String("weather.handler"),
-		Code:    awslambda.Code_FromAsset(jsii.String("path/to/weather/lambda"), nil),
+		Code:    awslambda.Code_FromAsset(jsii.String("src/infrastructure/lambda"), nil),
 	})
 
 	// Define Lambda function for GitHub API
 	githubLambda := awslambda.NewFunction(stack, jsii.String("GithubLambda"), &awslambda.FunctionProps{
 		Runtime: awslambda.Runtime_GO_1_X(),
 		Handler: jsii.String("github.handler"),
-		Code:    awslambda.Code_FromAsset(jsii.String("path/to/github/lambda"), nil),
+		Code:    awslambda.Code_FromAsset(jsii.String("src/infrastructure/lambda"), nil),
 	})
 
 	// Define Lambda function for Google Geocoding API
 	googleLambda := awslambda.NewFunction(stack, jsii.String("GoogleGeoLambda"), &awslambda.FunctionProps{
 		Runtime: awslambda.Runtime_GO_1_X(),
 		Handler: jsii.String("googlegeo.handler"),
-		Code:    awslambda.Code_FromAsset(jsii.String("path/to/googlegeo/lambda"), nil),
+		Code:    awslambda.Code_FromAsset(jsii.String("src/infrastructure/lambda"), nil),
 	})
 
 	// Define Lambda function for Stripe API
 	stripeLambda := awslambda.NewFunction(stack, jsii.String("StripeLambda"), &awslambda.FunctionProps{
 		Runtime: awslambda.Runtime_GO_1_X(),
 		Handler: jsii.String("stripe.handler"),
-		Code:    awslambda.Code_FromAsset(jsii.String("path/to/stripe/lambda"), nil),
+		Code:    awslambda.Code_FromAsset(jsii.String("src/infrastructure/lambda"), nil),
 	})
 
 	// Create the API Gateway
